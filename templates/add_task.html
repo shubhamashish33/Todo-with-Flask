@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<h1>Todo-with-Flask</h1>
+<div class="task">
+
+    <form action="" method="post">
+        <p>
+            {{form.taskname.label}} <br>
+            {{form.taskname}}
+        </p>
+        <p>
+            {{form.taskdesc.label}} <br>
+            {{form.taskdesc}}
+        </p>
+        <p>
+            {{form.task_status.label}} <br>
+            {{form.task_status}}
+        </p>
+        <p>
+            <center>
+                Please Select Task Status out of these <br>
+                Not Started | 
+                Pending | 
+                Completed | 
+                <br>
+                <br>
+            </center>
+        </p>
+        <p>
+            {{form.submit}}
+        </p>
+
+    </form>
+
+</div>
+
+<div class="add-task">
+    <button>
+        <a href="/" class="button-add">Back</a>
+    </button>
+</div>
+
+{% endblock%}

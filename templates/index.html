@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% block content%}
+<h1>Todo-with-Flask</h1>
+
+
+
+<div class="show-task">
+    <div class="group-task">
+
+        <div class="notstarted">
+            <h2>
+                Not Started
+            </h2>
+            {% for todo in task_user %}
+            {% if todo.taskStatus == 'Not Started' %}
+            <p class="taskname">
+                <b>
+                    {{todo.title}}
+                </b>
+                {{todo.desc}}
+            <div class="group-button">
+                <a href="/update/{{todo.id}}" class="update-button"> Update </a>
+                <a href="/delete/{{todo.id}}" class="delete-button"> Delete </a>
+            </div>
+            </p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="pending">
+            <h2>
+                Pending
+            </h2>
+            {% for todo in task_user %}
+            {% if todo.taskStatus == 'Pending' %}
+            <p class="taskname">
+                <b>
+                    {{todo.title}}
+                </b>
+                {{todo.desc}}
+            <div class="group-button">
+                <a href="/update/{{todo.id}}" class="update-button"> Update </a>
+                <a href="/delete/{{todo.id}}" class="delete-button"> Delete </a>
+            </div </p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="completed">
+            <h2>
+                Completed
+            </h2>
+            {% for todo in task_user %}
+            {% if todo.taskStatus == 'Completed' %}
+            <p class="taskname">
+                <b>
+                    {{todo.title}}
+                </b>
+                {{todo.desc}}
+            <div class="group-button">
+                <a href="/delete/{{todo.id}}" class="delete-button"> Delete </a>
+            </div </p>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+
+<div class="add-task">
+    <button>
+        <a href="/task/add" class="button-add">Add Task</a>
+    </button>
+</div>
+{% endblock%}
