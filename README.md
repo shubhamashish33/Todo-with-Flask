@@ -16,8 +16,18 @@ Web Based Todo App made with Flask Module and SQLAlchemy
 ## Installation
 
 - Clone the Repository
+``` bash
+gh repo clone shubhamashish33/Todo-with-Flask
+```
 - Install Dependencies
+``` python
+pip install requirements.txt 
+```
 - Run Flask Server
+``` pyhton
+python app.py
+```
+
 
 ## Screenshots
 
